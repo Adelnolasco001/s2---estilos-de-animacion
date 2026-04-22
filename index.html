@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Animaciones CSS - Nivel Principiante Entendible</title>
+    <style>
+        
+        body {
+            font-family: 'Century Gothic', Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+            text-align: center; /*centra el texto  */
+        }
+
+        /*caja o variable para cadaa ejercc*/
+        .ejercicio {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /*limites de la imagen*/
+        img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        
+        /* -aparecer lento */
+        @keyframes aparecer {
+            0%   { opacity: 0; }    /* sale invisible */
+            100% { opacity: 1; }    /* Termina visible */
+        }
+
+        /* --de abajo pa arriba*/
+        @keyframes deslizarArriba {
+            0%   { 
+                opacity: 0; 
+                transform: translateY(100px); /* distancia desde abajp */
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0);    /* lugar asignado */
+            }
+        }
+/* todos apareceran  */
+        
+        h1, h2, p {
+            animation-name: aparecer;
+            animation-duration: 2s;      /* 2s aparecer */
+            animation-fill-mode: both;   /* Se ve*/
+        }
+
+        /* Llas imagenes aparecen de abajo para rriba  */
+        img {
+            animation-name: deslizarArriba;
+            animation-duration: 1.5s;
+            animation-fill-mode: both;
+        }
+        /* retraso entre cada elemento  */
+        .ejercicio h1 {
+            animation-delay: 0.2s;  /* title */
+        }
+        .ejercicio h2 {
+            animation-delay: 0.5s;  /*subtítulo */ 
+        }
+        .ejercicio p {
+            animation-delay: 0.8s;/* parrfos */
+        }
+        .ejercicio img {
+            animation-delay: 1.1s;  /* imgs */  
+        }
+
+        img:hover {
+            transform: scale(1.02);      /* Aumenta ligeramente , hace como que se marque */
+            transition: transform 0.3s;   /* crea como textura al pasar el mouse */
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+    </style>
+    
+</head>
+<body>
+
+    <!-- ================= EJERCICIO 1 ================= -->
+    <!-- Cada ejercicio está dentro de un <div class="ejercicio"> -->
+    <div class="ejercicio">
+        <h1>MANUEL SEOANE CORRALES</h1>
+        <p>IESTP Manuel Seoane Corrales - Promoción 2026 - Computación e Informática. Formando líderes tecnológicos con valores y excelencia académica.</p>
+        <img src="img/logo.png" alt="Logo Manuel Seoane Corrales">
+    </div>
+
+    <!-- //////////------------------------------------------------------------------------------------------------------------------ -->
+    <div class="ejercicio">
+        <img src="img/sam-altman.jpg" alt="Sam Altman">
+        <h2>SAM ALTMAN</h2>
+        <p>Sam Altman es un empresario e inversor estadounidense, conocido por ser el CEO de OpenAI, la empresa detrás de ChatGPT y DALL-E.</p>
+        <img src="img/openai-logo.png" alt="Sam Altman en evento">
+        <p>Altman ha sido una figura clave en el desarrollo de la inteligencia artificial moderna, abogando por un enfoque responsable y accesible.</p>
+    </div>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <div class="ejercicio">
+        <h1>DRA. LISA SU</h1>
+        <h2>Presidenta y CEO de AMD</h2>
+        <img src="img/DRA. LISA SU.jpg" alt="Dra. Lisa Su">
+        <p>La Dra. Lisa Su es una ingeniera eléctrica y líder empresarial que transformó AMD en un gigante de los semiconductores.</p>
+        <p>Bajo su liderazgo, AMD ha lanzado procesadores Ryzen y tarjetas gráficas Radeon que compiten directamente con Intel y NVIDIA.</p>
+    </div>
+
+</body>
+</html>
+
