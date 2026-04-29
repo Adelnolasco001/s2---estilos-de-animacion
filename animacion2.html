@@ -1,92 +1,115 @@
 <html>
 <head>
-    <title>ANIMACION 3 CSS</title>
+    <title>Animacion Horizontal </title>
+
     <style>
 
         *{
-            padding: 0px;
-            margin: 0px;
-            
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body{
+            background: #0b0f1a;
+            color: white;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        h1{
+            margin: 20px;
+        }
+
         .contenedor{
             width: 400px;
             height: 200px;
-            border: 1px solid black;
-            position: relative; /*para centrar el div*/
-            margin: 0 auto; /*para centrar el div*/
-
-            overflow: hidden; /*muestra solo lo interior*/
-            background-color: black;
-
+            border: 1px solid #222;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+            background: black;
         }
 
+        /* personaje */
         .cuadrito{
-            width: 100px;
-            height: 100px;
-            background-color: rgb(227, 217, 217);
-            position: absolute; /*permite mover el div dentro del cuadrito*/
-
-            top: 100px;  /* de arriba hacia abajo "top"*/ 
-            left: 200px; /* de izquierda a derecha*/
-
-            animation: cuadrito 1s infinite ease-in;
-
-            rotate: 30 deg;
-        }
-
-        @keyframes cuadrito{
-            from{
-                left: -100px
-            }
-            to{
-                left: 500px
-
-            }
+            position: absolute;
+            top: 50%;
+            left: -120px;
+            transform: translateY(-50%);
+            animation: mover 3s infinite linear;
         }
 
         .cuadrito img{
-
-            width: 100px ;
-            height: 100px;
+            width: 100px;
+            filter: drop-shadow(0 0 10px cyan);
         }
 
-        @keyframes img{
-                from{
-                    top:40px
-                }
-
-                to{
-                    left: 30px
-                }
+        
+        @keyframes mover{
+            0%{
+                left: -120px;
+                transform: translateY(-50%) scale(0.9);
             }
 
-    </style>
+            50%{
+                transform: translateY(-50%) scale(1.05);
+            }
 
+            100%{
+                left: 420px;
+                transform: translateY(-50%) scale(0.9);
+            }
+        }
+
+        /* asteroides rapidos */
+        .linea{
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: white;
+            opacity: 0.3;
+            animation: lineas 1s linear infinite;
+        }
+
+        @keyframes lineas{
+            from{
+                left: 400px;
+            }
+            to{
+                left: -50px;
+            }
+        }
+
+        /* diferentes velociades */
+        .l1{ top: 40px; animation-duration: 0.8s;}
+        .l2{ top: 80px; animation-duration: 1s;}
+        .l3{ top: 120px; animation-duration: 0.6s;}
+        .l4{ top: 160px; animation-duration: 1.2s;}
+
+    </style>
 </head>
+
 <body>
 
-    <h1>horizon</h1>
-    <div class= "contenedor">
-        
+    <h1>Movimiento Horizontal </h1>
 
-        <div class="cuadrito"> 
-            <img src="img/megamanx.gif" alt="">
+    <div class="contenedor">
 
-    
+        <!-- lineas vel -->
+        <div class="linea l1"></div>
+        <div class="linea l2"></div>
+        <div class="linea l3"></div>
+        <div class="linea l4"></div>
 
-            
-
-
+        <div class="cuadrito">
+            <img src="img/megamanx.gif">
         </div>
-
-        
 
     </div>
 
-        <a href="index.html">Volver</a>
-
-
-
+    <br>
+    <a href="index.html">Volver</a>
 
 </body>
 </html>

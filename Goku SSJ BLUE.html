@@ -1,186 +1,197 @@
 <html>
   <head>
-    <title>ANIMACION 3 CSS</title>
+    <title>Goku SSJ BLUE - ULTRA</title>
 
     <style>
-      
       * {
         margin: 0;
         padding: 0;
       }
 
-      
+      body {
+        background: black;
+        text-align: center;
+        color: white;
+        font-family: Arial;
+      }
+
       .contenedor {
         width: 400px;
         height: 200px;
-        margin: 0 auto;
-        border: 1px solid black;
-        background-color: black;
+        margin: 20px auto;
+        border: 1px solid #222;
+        background: radial-gradient(circle, #000 60%, #020617);
         position: relative;
         overflow: hidden;
       }
 
-      
+      /* GOKU */
       .cuadrito_img {
         position: absolute;
         top: 50%;
         left: 20px;
-        
-        animation: rotar 2s infinite ease-in-out;
-        transform: scaleX(2);
+        transform: translateY(-50%);
+        animation: flotar 2s infinite ease-in-out;
       }
 
       .cuadrito_img img {
         width: 100px;
-        transform: scaleX(-1); /* mira a la derecha */
-        filter: drop-shadow(0 0 10px cyan);
+        transform: scaleX(-1);
+        filter: drop-shadow(0 0 10px cyan)
+                drop-shadow(0 0 25px blue)
+                drop-shadow(0 0 40px cyan);
       }
 
-      @keyframes rotar {
+      /* AURA */
+      .aura {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        width: 120px;
+        height: 120px;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(0,255,255,0.4), transparent 70%);
+        animation: aura 2s infinite ease-in-out;
+        filter: blur(10px);
+      }
+
+      @keyframes aura {
+        0% { transform: translateY(-50%) scale(1); opacity: 0.6; }
+        50% { transform: translateY(-50%) scale(1.2); opacity: 1; }
+        100% { transform: translateY(-50%) scale(1); opacity: 0.6; }
+      }
+
+      @keyframes flotar {
         0% {
-          transform: translateY(-50%) rotate(-5deg);
+          transform: translateY(-50%) translateY(-5px) rotate(-4deg);
         }
         50% {
-          transform: translateY(-50%) rotate(5deg);
+          transform: translateY(-50%) translateY(5px) rotate(4deg);
         }
         100% {
-          transform: translateY(-50%) rotate(-5deg);
+          transform: translateY(-50%) translateY(-5px) rotate(-4deg);
         }
       }
 
-      
-      .estrella1,
-      .estrella2,
-      .estrella3,
-      .estrella4,
-      .estrella5,
-      .estrella6,
-      .estrella7,
-      .estrella8,
-      .estrella9,
-      .estrella10 {
+      /* ESTRELLAS */
+      .estrella {
         position: absolute;
-        width: 5px;
-        height: 5px;
         background: white;
+        border-radius: 50%;
+        animation: mover linear infinite, parpadear 1.5s infinite alternate;
       }
 
-      @keyframes estrellas {
+      @keyframes mover {
         from {
-          left: 400px;
+          transform: translateX(0);
         }
         to {
-          left: -10px;
+          transform: translateX(-450px);
         }
       }
 
-      
-
-      .estrella1 {
-        top: 20px;
-        left: 300px;
-        animation: estrellas 2s linear infinite;
-        animation-delay: 0s;
-        box-shadow: 0 0 6px white;
-        transform: scaleX(2);
+      @keyframes parpadear {
+        from { opacity: 0.2; }
+        to { opacity: 1; }
       }
 
-      .estrella2 {
-        top: 80px;
-        left: 150px;
-        animation: estrellas 3s linear infinite;
-        animation-delay: 0.5s;
-      }
+      /* CAPAS */
+      .c1 { width: 2px; height: 2px; animation-duration: 4s; }
+      .c2 { width: 4px; height: 4px; animation-duration: 2.5s; }
+      .c3 { width: 6px; height: 6px; animation-duration: 1.5s; box-shadow: 0 0 8px white; }
 
-      .estrella3 {
-        top: 60px;
-        left: 50px;
-        animation: estrellas 1.5s linear infinite;
-        animation-delay: 1s;
-      }
+      /* POSICIONES + DELAYS (CLAVE) */
+      .e1 { top: 10px; left: 400px; animation-delay: 0s; }
+      .e2 { top: 30px; left: 380px; animation-delay: 0.5s; }
+      .e3 { top: 50px; left: 360px; animation-delay: 1s; }
+      .e4 { top: 70px; left: 340px; animation-delay: 1.5s; }
+      .e5 { top: 90px; left: 320px; animation-delay: 2s; }
 
-      .estrella4 {
-        top: 140px;
-        left: 200px;
-        width: 3px;
-        height: 3px;
-        animation: estrellas 1.8s linear infinite;
-        animation-delay: 0.2s;
-      }
+      .e6 { top: 110px; left: 300px; animation-delay: 0.3s; }
+      .e7 { top: 130px; left: 280px; animation-delay: 0.8s; }
+      .e8 { top: 150px; left: 260px; animation-delay: 1.3s; }
+      .e9 { top: 170px; left: 240px; animation-delay: 1.8s; }
+      .e10 { top: 190px; left: 220px; animation-delay: 2.3s; }
 
-      .estrella5 {
-        top: 150px;
-        left: 100px;
-        width: 6px;
-        height: 6px;
-        animation: estrellas 2.5s linear infinite;
-        animation-delay: 1.2s;
-      }
+      .e11 { top: 20px; left: 200px; animation-delay: 0.2s; }
+      .e12 { top: 40px; left: 180px; animation-delay: 0.7s; }
+      .e13 { top: 60px; left: 160px; animation-delay: 1.2s; }
+      .e14 { top: 80px; left: 140px; animation-delay: 1.7s; }
+      .e15 { top: 100px; left: 120px; animation-delay: 2.2s; }
 
-      .estrella6 {
-        top: 180px;
-        left: 250px;
-        width: 3px;
-        height: 3px;
-        animation: estrellas 1.3s linear infinite;
-        animation-delay: 0.8s;
-      }
+      .e16 { top: 120px; left: 100px; animation-delay: 0.4s; }
+      .e17 { top: 140px; left: 80px; animation-delay: 0.9s; }
+      .e18 { top: 160px; left: 60px; animation-delay: 1.4s; }
+      .e19 { top: 180px; left: 40px; animation-delay: 1.9s; }
+      .e20 { top: 50px; left: 20px; animation-delay: 2.4s; }
 
-      .estrella7 {
-        top: 10px;
-        left: 50px;
-        animation: estrellas 2.2s linear infinite;
-        animation-delay: 0.3s;
-      }
+      .e21 { top: 30px; left: 350px; animation-delay: 0.6s; }
+      .e22 { top: 70px; left: 310px; animation-delay: 1.1s; }
+      .e23 { top: 110px; left: 270px; animation-delay: 1.6s; }
+      .e24 { top: 150px; left: 230px; animation-delay: 2.1s; }
+      .e25 { top: 190px; left: 190px; animation-delay: 2.6s; }
 
-      .estrella8 {
-        top: 140px;
-        left: 300px;
-        animation: estrellas 1.6s linear infinite;
-        animation-delay: 1s;
-      }
+      .e26 { top: 25px; left: 150px; animation-delay: 0.1s; }
+      .e27 { top: 65px; left: 110px; animation-delay: 0.6s; }
+      .e28 { top: 105px; left: 70px; animation-delay: 1.1s; }
+      .e29 { top: 145px; left: 30px; animation-delay: 1.6s; }
+      .e30 { top: 185px; left: 10px; animation-delay: 2.1s; }
 
-      .estrella9 {
-        top: 120px;
-        left: 180px;
-        animation: estrellas 2s linear infinite;
-        animation-delay: 0.6s;
-      }
-
-      .estrella10 {
-        top: 90px;
-        left: 20px;
-        animation: estrellas 1.4s linear infinite;
-        animation-delay: 0.9s;
-      }
     </style>
   </head>
 
   <body>
+
     <h1>Goku SSJ BLUE</h1>
 
     <div class="contenedor">
-      <!-- ESTRELLAS -->
-      <div class="estrella1"></div>
-      <div class="estrella2"></div>
-      <div class="estrella3"></div>
-      <div class="estrella4"></div>
-      <div class="estrella5"></div>
-      <div class="estrella6"></div>
-      <div class="estrella7"></div>
-      <div class="estrella8"></div>
-      <div class="estrella9"></div>
-      <div class="estrella10"></div>
 
-      <!-- PERSONAJE -->
+      <!-- AURA -->
+      <div class="aura"></div>
+
+      <!-- 30 ESTRELLAS -->
+      <div class="estrella c1 e1"></div>
+      <div class="estrella c1 e2"></div>
+      <div class="estrella c1 e3"></div>
+      <div class="estrella c1 e4"></div>
+      <div class="estrella c1 e5"></div>
+      <div class="estrella c1 e6"></div>
+      <div class="estrella c1 e7"></div>
+      <div class="estrella c1 e8"></div>
+      <div class="estrella c1 e9"></div>
+      <div class="estrella c1 e10"></div>
+
+      <div class="estrella c2 e11"></div>
+      <div class="estrella c2 e12"></div>
+      <div class="estrella c2 e13"></div>
+      <div class="estrella c2 e14"></div>
+      <div class="estrella c2 e15"></div>
+      <div class="estrella c2 e16"></div>
+      <div class="estrella c2 e17"></div>
+      <div class="estrella c2 e18"></div>
+      <div class="estrella c2 e19"></div>
+      <div class="estrella c2 e20"></div>
+
+      <div class="estrella c3 e21"></div>
+      <div class="estrella c3 e22"></div>
+      <div class="estrella c3 e23"></div>
+      <div class="estrella c3 e24"></div>
+      <div class="estrella c3 e25"></div>
+      <div class="estrella c3 e26"></div>
+      <div class="estrella c3 e27"></div>
+      <div class="estrella c3 e28"></div>
+      <div class="estrella c3 e29"></div>
+      <div class="estrella c3 e30"></div>
+
+      <!-- GOKU -->
       <div class="cuadrito_img">
-        <img src="img/goku.gif" /
-        width="200px"
-        height="100px">
+        <img src="img/goku.gif">
       </div>
+
     </div>
 
-        <a href="index.html">Volver</a>
+    <a href="index.html" style="color:white;">Volver</a>
 
   </body>
 </html>

@@ -1,74 +1,124 @@
 <html>
 <head>
-    <title>ANIMACION 3 CSS</title>
+    <title>Animación Diagonal</title>
+
     <style>
 
         *{
-            padding: 0px;
-            margin: 0px;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body{
+            background: #0b0f1a;
+            color: white;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        h1{
+            margin: 20px;
+        }
+
         .contenedor{
             width: 400px;
             height: 200px;
-            border: 1px solid black;
-            position: relative; /*para centrar el div*/
-            margin: 0 auto; /*para centrar el div*/
-
-            overflow: hidden; /*muestra solo lo interior*/
-
-            background-color: black;
-
+            border: 1px solid #222;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+            background: black;
         }
 
         .cuadrito{
-            width: 100px;
-            height: 100px;
-            background-color: rgb(237, 216, 216);
-            position: absolute; /*permite mover el div dentro del cuadrito*/
-
-            top: 100px;  /* de arriba hacia abajo "top"*/ 
-            left: 200px; /* de izquierda a derecha*/
-
-            animation: cuadrito 1s infinite linear;
+            position: absolute;
+            animation: diagonal 3s infinite ease-in-out;
         }
 
-        @keyframes cuadrito{
-            from{
-                
-                top: -100px;
-                left: -100px;
-            }
-            to{
-                
-                
-                top: 300px;
-                left: 500px;
-
-            }
-        }
         .cuadrito img{
             width: 100px;
-            height: 100px;
+            filter: drop-shadow(0 0 10px cyan);
         }
 
-    </style>
+        /* diagonal */
+        @keyframes diagonal{
 
+            0%{
+                top: -100px;
+                left: -100px;
+                transform: rotate(0deg) scale(0.9);
+            }
+
+            30%{
+                top: 40px;
+                left: 120px;
+                transform: rotate(10deg) scale(1.1);
+            }
+
+            60%{
+                top: 120px;
+                left: 260px;
+                transform: rotate(-10deg) scale(1);
+            }
+
+            100%{
+                top: 300px;
+                left: 500px;
+                transform: rotate(0deg) scale(0.9);
+            }
+        }
+
+        /* meteooros */
+        .particula{
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            opacity: 0.6;
+            animation: particulas 2s linear infinite;
+        }
+
+        @keyframes particulas{
+            from{
+                left: 400px;
+                top: 0;
+            }
+            to{
+                left: -20px;
+                top: 200px;
+            }
+        }
+
+        /* diferentes velocidades */
+        .p1{ top: 20px; animation-duration: 1.5s;}
+        .p2{ top: 80px; animation-duration: 2s;}
+        .p3{ top: 140px; animation-duration: 1.2s;}
+        .p4{ top: 50px; animation-duration: 1.8s;}
+
+    </style>
 </head>
+
 <body>
 
-    <h1>Dialonal</h1>
-    <div class= "contenedor">
+    <h1>Movimiento Diagonal</h1>
+
+    <div class="contenedor">
+
+        <!-- estrellas -->
+        <div class="particula p1"></div>
+        <div class="particula p2"></div>
+        <div class="particula p3"></div>
+        <div class="particula p4"></div>
 
         <div class="cuadrito">
-            <img src="img/megamanx.gif" alt="">
+            <img src="img/megamanx.gif">
         </div>
 
     </div>
 
-        <a href="index.html">Volver</a>
-
-
-
+    <br>
+    <a href="index.html">Volver</a>
 
 </body>
 </html>

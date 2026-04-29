@@ -1,72 +1,119 @@
 <html>
 <head>
-    <title>ANIMACION 3 CSS</title>
+    <title>Animación Vertical</title>
+
     <style>
 
         *{
-            padding: 0px;
-            margin: 0px;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body{
+            background: #0b0f1a;
+            color: white;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        h1{
+            margin: 20px;
+        }
+
         .contenedor{
             width: 400px;
             height: 200px;
-            border: 1px solid black;
-            position: relative; /*para centrar el div*/
-            margin: 0 auto; /*para centrar el div*/
-
-            overflow: hidden; /*muestra solo lo interior*/
-            background-color: black;
-
+            border: 1px solid #222;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+            background: black;
         }
 
+        /* megaman */
         .cuadrito{
-            width: 100px;
-            height: 100px;
-            background-color: rgb(219, 210, 210);
-            position: absolute; /*permite mover el div dentro del cuadrito*/
-
-            top: 100px;  /* de arriba hacia abajo "top"*/ 
-            right:200px; /* de izquierda a derecha*/
-
-            animation: cuadrito 1s infinite ease-in;
-            rotate: 5px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: subirBajar 2s infinite ease-in-out;
         }
 
-        @keyframes cuadrito{
+        .cuadrito img{
+            width: 100px;
+            filter: drop-shadow(0 0 10px cyan);
+        }
+
+        /* sube-baja */
+        @keyframes subirBajar{
+            0%{
+                top: 200px;
+                transform: translateX(-50%) scale(0.9);
+            }
+
+            50%{
+                top: 40px;
+                transform: translateX(-50%) scale(1.1);
+            }
+
+            100%{
+                top: 200px;
+                transform: translateX(-50%) scale(0.9);
+            }
+        }
+
+        /* ESTRELLAS DE FONDO */
+        .estrella{
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            animation: estrellas 2s linear infinite;
+        }
+
+        @keyframes estrellas{
             from{
-                top: 300px
+                top: -10px;
+                opacity: 0;
             }
             to{
-                top: -100px
-
+                top: 210px;
+                opacity: 1;
             }
         }
-        .cuadrito img{
 
-            width: 100px;
-            height: 100px;
-        }
+        /* estrellas*/
+        .e1{ left: 50px; animation-duration: 1.5s;}
+        .e2{ left: 100px; animation-duration: 2s;}
+        .e3{ left: 150px; animation-duration: 1.2s;}
+        .e4{ left: 200px; animation-duration: 2.5s;}
+        .e5{ left: 250px; animation-duration: 1.8s;}
+        .e6{ left: 300px; animation-duration: 2.2s;}
 
     </style>
-
 </head>
+
 <body>
-    <h1>Vertical</h1>
 
-    <div class= "contenedor">
+    <h1>Movimiento Vertical</h1>
 
-        <div class="cuadrito"> 
-            <img src="img/megamanx.gif" alt="">
-            
-            
+    <div class="contenedor">
+
+        <div class="estrella e1"></div>
+        <div class="estrella e2"></div>
+        <div class="estrella e3"></div>
+        <div class="estrella e4"></div>
+        <div class="estrella e5"></div>
+        <div class="estrella e6"></div>
+
+        <div class="cuadrito">
+            <img src="img/megamanx.gif">
         </div>
-        
 
     </div>
 
+    <br>
     <a href="index.html">Volver</a>
-
-
 
 </body>
 </html>

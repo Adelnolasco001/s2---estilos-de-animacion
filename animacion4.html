@@ -1,92 +1,128 @@
 <html>
 <head>
-    <title>ANIMACION 3 CSS</title>
+    <title>Animación Megaman </title>
+
     <style>
 
         *{
-            padding: 0px;
-            margin: 0px;
-            
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body{
+            background: #0b0f1a;
+            color: white;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        h1{
+            margin: 20px;
+        }
+
         .contenedor{
             width: 400px;
             height: 200px;
-            border: 1px solid black;
-            position: relative; /*para centrar el div*/
-            margin: 0 auto; /*para centrar el div*/
-
-            overflow: hidden; /*muestra solo lo interior*/
-            background-color: black;
-
+            border: 1px solid #222;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+            background: black;
         }
 
-        .cuadrito{
+        .megaman{
+            position: absolute;
+            left: 40px;
+            bottom: 20px;
+            animation: vibrar 0.3s infinite;
+        }
+
+        .megaman img{
             width: 100px;
-            height: 100px;
-            background-color: black;
-            position: absolute; /*permite mover el div dentro del cuadrito*/
-
-            top: 100px;  /* de arriba hacia abajo "top"*/ 
-            left: 200px; /* de izquierda a derecha*/
-
-            animation: cuadrito 1s infinite ease-in;
-
-            rotate: 30 deg;
+            filter: drop-shadow(0 0 10px cyan);
         }
 
-        @keyframes cuadrito{
-            from{
-                left: -100px
-            }
-            to{
-                left: 500px
-
-            }
+        @keyframes vibrar{
+            0%{ transform: translateY(0px); }
+            50%{ transform: translateY(-2px); }
+            100%{ transform: translateY(0px); }
         }
 
-        .cuadrito img{
-
-            width: 100px ;
-            height: 100px;
+        /* suelo en movimiento */
+        .suelo{
+            position: absolute;
+            bottom: 0;
+            width: 800px;
+            height: 20px;
+            background: gray;
+            animation: moverSuelo 2s linear infinite;
         }
 
-        @keyframes img{
-                from{
-                    top:40px
-                }
+        @keyframes moverSuelo{
+            from{ left: 0; }
+            to{ left: -400px; }
+        }
 
-                to{
-                    left: 30px
-                }
-            }
+        /* obstaculos  */
+        .bloque{
+            position: absolute;
+            bottom: 20px;
+            width: 20px;
+            height: 20px;
+            background: red;
+            animation: moverBloques 2s linear infinite;
+        }
+
+        @keyframes moverBloques{
+            from{ left: 400px; }
+            to{ left: -20px; }
+        }
+
+        /* variacion de velocidades */
+        .b1{ animation-delay: 0s; }
+        .b2{ animation-delay: 1s; }
+
+        /* disparos  */
+        .bala{
+            position: absolute;
+            left: 120px;
+            bottom: 60px;
+            width: 10px;
+            height: 4px;
+            background: cyan;
+            animation: disparo 1s linear infinite;
+        }
+
+        @keyframes disparo{
+            from{ left: 120px; }
+            to{ left: 400px; }
+        }
 
     </style>
-
 </head>
+
 <body>
 
-    <h1>Megamanx</h1>
-    <div class= "contenedor">
-        
+    <h1>Megaman X PRO</h1>
 
-        <div class="cuadrito"> 
-            <img src="img/megamanx.gif" alt="">
+    <div class="contenedor">
 
-    
+        <div class="suelo"></div>
 
-            
+        <div class="bloque b1"></div>
+        <div class="bloque b2"></div>
 
+        <div class="bala"></div>
 
+        <div class="megaman">
+            <img src="img/megamanx.gif">
         </div>
-
-        
 
     </div>
 
-        <a href="index.html">Volver</a>
-
-
-
+    <br>
+    <a href="index.html">Volver</a>
 
 </body>
 </html>

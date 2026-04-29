@@ -1,39 +1,97 @@
 <html>
   <head>
-    <title>ANIMACION 3 CSS</title>
+    <title>Animaciones CSS3</title>
+
     <style>
-      h1 {
-        background-color: rgb(55, 203, 203);
-      }
-
       * {
-        background-color: rgb(13, 14, 14);
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
       }
-      table-img{
 
-        filter: drop-shadow(0 0 10px rgb(211, 221, 17));
+      body {
+        background: #0b0f1a;
+        color: white;
+        text-align: center;
+      }
+
+      h1 {
+        padding: 20px;
+        background: linear-gradient(90deg, cyan, blue);
+        color: black;
+      }
+
+      /* CONTENEDOR */
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 30px;
+      }
+
+      /* TARJETAS */
+      .card {
+        width: 180px;
+        padding: 20px;
+        background: #111827;
+        border-radius: 12px;
+        text-decoration: none;
+        color: white;
+        transition: 0.3s;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .card:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 0 20px cyan;
+      }
+
+      .card h2 {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      /* IMAGEN */
+      .preview {
+        margin-top: 30px;
+      }
+
+      .preview img {
+        width: 150px;
+        filter: drop-shadow(0 0 10px yellow) drop-shadow(0 0 20px orange);
       }
     </style>
   </head>
+
   <body>
-    <h1>AnimacionesCSS3 -MOVIMIENTOS</h1>
+    <h1>Animaciones CSS3 - Movimientos</h1>
 
-    <table border="<h1>Animcaiones</h1>">
-      <tr>
-      <tr><h1>Tabla de Animaciones </h1>
-        <td><a href="animacion2.html">Movimiento Horizontal</a><br /><br /></td>
+    <div class="container">
+      <a class="card" href="animacion1.html">
+        <h2>Movimiento Vertical</h2>
+      </a>
 
-        <td><a href="animacion1.html">Movimiento Vertical</a><br /><br /></td>
+      <a class="card" href="animacion2.html">
+        <h2>Movimiento Horizontal</h2>
+      </a>
 
-        <td><a href="animacion3.html">Movimiento Diagonal</a><br /><br /></td>
+      <a class="card" href="animacion3.html">
+        <h2>Movimiento Diagonal</h2>
+      </a>
 
-        <td><a href="animacion4.html">Megamanx</a><br /><br /></td>
+      <a class="card" href="animacion4.html">
+        <h2>Megaman X</h2>
+      </a>
 
-        <td><a href="Goku SSJ BLUE.html">Goku SSJ BLUE</a><br /></td>
-        <br />
-        <td><img src="img/goku.gif" /></td>
-      </tr>
-      </tr>
-    </table>
+      <a class="card" href="Goku SSJ BLUE.html">
+        <h2>Goku SSJ Blue</h2>
+      </a>
+    </div>
+
+    <div class="preview">
+      <img src="img/goku.gif" />
+    </div>
   </body>
 </html>
