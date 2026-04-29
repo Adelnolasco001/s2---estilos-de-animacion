@@ -1,328 +1,39 @@
-<!doctype html>
-<html lang="es">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio Animaciones CSS</title>
-
+    <title>ANIMACION 3 CSS</title>
     <style>
-      /*
-        ════════════════════════════════════════════════════
-        PASO 2: VARIABLES CSS
-        :root es el elemento raiz (toda la pagina).
-        Aqui guardamos valores reutilizables: colores, sombras.
-        Para usar una variable escribes: var(--nombre)
-        ════════════════════════════════════════════════════
-        */
-      :root {
-        --color-bg: #f4f2ecf2;
-        --color-surface: #ffffff;
-        --color-border: rgba(0, 0, 0, 0.092);
-        --color-text: #1a1917;
-        --color-muted: #6b6a67;
-        --color-accent: #016a6f;
-
-        /* Sombras con tono calido, no negro puro */
-        --shadow-sm:
-          0 1px 3px rgba(60, 50, 30, 0.06), 0 4px 12px rgba(60, 50, 30, 0.04);
-        --shadow-md:
-          0 6px 20px rgba(60, 50, 30, 0.09), 0 16px 40px rgba(60, 50, 30, 0.06);
-
-        --transition: 340ms cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      /*
-        ════════════════════════════════════════════════════
-        PASO 3: RESET BASICO
-        * aplica a TODOS los elementos de la pagina.
-        box-sizing: border-box = el padding no agranda el elemento,
-        es mucho mas predecible para calcular tamanios.
-        ════════════════════════════════════════════════════
-        */
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        font-family: "Inter", sans-serif;
-        background-color: var(--color-bg);
-        color: var(--color-text);
-        padding: 48px 20px 80px;
-        text-align: center;
-        -webkit-font-smoothing: antialiased;
-      }
-
-      /*
-        ════════════════════════════════════════════════════
-        PASO 4: CONTENEDOR
-        Limita el ancho maximo a 580px y lo centra con
-        margin-inline: auto (es lo mismo que margin: 0 auto).
-        ════════════════════════════════════════════════════
-        */
-      .contenedor {
-        max-width: 620px;
-        margin-inline: auto;
-      }
-
-      /*
-        ════════════════════════════════════════════════════
-        PASO 5: ANIMACION DE SCROLL — SOLO CON CSS
-        Tecnica: animation-timeline: view()
-
-        Esta es una funcion CSS moderna que vincula una
-        animacion al scroll de la pagina.
-        En lugar de reproducirse con el tiempo, la animacion
-        avanza segun cuanto ha entrado el elemento en pantalla.
-
-        animation-range: entry 0% entry 30%
-        Significa: anima desde que el elemento EMPIEZA a entrar
-        (0%) hasta que entro el 30% de su altura (30%).
-
-        animation-fill-mode: both
-        Mantiene el estado final de la animacion una vez termina.
-        ════════════════════════════════════════════════════
-        */
-      .ejercicio {
-        background-color: var(--color-surface);
-        border-radius: 16px;
-        border: 1px solid var(--color-border);
-        box-shadow: var(--shadow-sm);
-        padding: 36px 32px;
-        margin-bottom: 28px;
-
-        /* Vincula la animacion al scroll (sin JavaScript) */
-        animation-name: entrarCard;
-        animation-duration: 1s; /* duración base, el scroll la controla */
-        animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-        animation-fill-mode: both;
-
-        /*
-            animation-timeline: view()
-            "view()" = usa la visibilidad del elemento en pantalla
-            como linea de tiempo. Es 100% CSS, sin JS.
-            */
-        animation-timeline: view();
-
-        /*
-            animation-range: entry 0% entry 35%
-            La animacion ocurre mientras el elemento entra:
-            - entry 0%  = justo cuando empieza a verse
-            - entry 35% = cuando ya entro el 35% del elemento
-            */
-        animation-range: entry 0% entry 35%;
-
-        /* Transicion para el hover (independiente del scroll) */
-        transition:
-          transform var(--transition),
-          box-shadow var(--transition);
-      }
-
-      /*
-        ════════════════════════════════════════════════════
-        PASO 6: HOVER EN LA CARD
-        Al pasar el mouse:
-        - translateY(-5px): sube 5px
-        - sombra mas grande: parece mas elevada
-        transition hace que el movimiento sea suave.
-        ════════════════════════════════════════════════════
-        */
-      .ejercicio:hover {
-        transform: translateY(-5px) scale(1.005);
-        box-shadow: var(--shadow-md);
-      }
-
-      /*
-        ════════════════════════════════════════════════════
-        PASO 7: @keyframes — define la animacion de entrada
-        from = estado inicial: invisible, abajo, ligeramente
-               mas pequena (scale 0.96 = 96% del tamano)
-        to   = estado final: visible, posicion normal, tamano normal
-
-        El efecto de "crecer" viene de scale(0.96) → scale(1).
-        No se ve plano porque la card literalmente crece
-        mientras sube, como si emergiera de la pagina.
-        ════════════════════════════════════════════════════
-        */
-      @keyframes entrarCard {
-        from {
-          opacity: 0;
-          transform: translateY(42px) scale(0.96);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-        }
-      }
-
-      /*
-        ════════════════════════════════════════════════════
-        PASO 8: ACCESIBILIDAD — prefers-reduced-motion
-        Algunos usuarios activan "reducir movimiento" por
-        mareos o epilepsia. Esta media query apaga las
-        animaciones para ellos automaticamente.
-        ════════════════════════════════════════════════════
-        */
-      @media (prefers-reduced-motion: reduce) {
-        .ejercicio {
-          animation: none;
-          opacity: 1;
-          transform: none;
-        }
-      }
-
-      /*
-        ════════════════════════════════════════════════════
-        PASO 9: TIPOGRAFIA
-        Usamos tamanios y pesos distintos para crear
-        jerarquia visual: el ojo sabe que es mas importante.
-        ════════════════════════════════════════════════════
-        */
       h1 {
-        font-size: 38px;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: var(--color-text);
-        margin-bottom: 10px;
+        background-color: rgb(55, 203, 203);
       }
 
-      h2 {
-        font-size: 1.35rem;
-        font-weight: 600;
-        letter-spacing: -0.01em;
-        color: var(--color-text);
-        margin-bottom: 10px;
+      * {
+        background-color: rgb(13, 14, 14);
       }
+      table-img{
 
-      p {
-        font-size: 0.88rem;
-        color: var(--color-muted);
-        line-height: 1.7;
-        max-width: 46ch;
-        margin-inline: auto;
-        margin-bottom: 14px;
-      }
-
-      /*
-        ════════════════════════════════════════════════════
-        PASO 10: IMAGENES
-        display: block + margin: auto = centradas.
-        transition hace suave el efecto hover.
-        ════════════════════════════════════════════════════
-        */
-      img {
-        max-width: 155px;
-        height: auto;
-        border-radius: 12px;
-        display: block;
-        margin: 16px auto;
-        transition: transform var(--transition);
-      }
-
-      /* PASO 11: HOVER imagen — crece suavemente */
-      img:hover {
-        transform: scale(1.06);
-      }
-
-      /*
-        ════════════════════════════════════════════════════
-        PASO 12: BADGE (etiqueta de categoria)
-        border-radius: 999px = forma de pilula.
-        El fondo es el color acento con muy poca opacidad.
-        ════════════════════════════════════════════════════
-        */
-      .badge {
-        display: inline-block;
-        font-size: 0.67rem;
-        font-weight: 500;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--color-accent);
-        background: rgba(1, 106, 111, 0.09);
-        border-radius: 999px;
-        padding: 3px 10px;
-        margin-bottom: 16px;
-      }
-
-      /*
-        ════════════════════════════════════════════════════
-        PASO 13: DIVISOR DECORATIVO
-        Una linea corta entre cards.
-        No necesita HTML especial solo es un div vacio.
-        ════════════════════════════════════════════════════
-        */
-      .divisor {
-        width: 24px;
-        height: 2px;
-        background: var(--color-accent);
-        border-radius: 999px;
-        margin: 0 auto 28px;
-        opacity: 0.3;
+        filter: drop-shadow(0 0 10px rgb(211, 221, 17));
       }
     </style>
   </head>
   <body>
-    <!--
-    ════════════════════════════════════════════════════
-    PASO 14: HTML — ESTRUCTURA
-    Cada ejercicio va dentro de un div.ejercicio.
-    La animacion de scroll se activa automaticamente con CSS
-    gracias a animation-timeline: view() — sin una sola
-    linea de JavaScript.
-    ════════════════════════════════════════════════════
-    -->
+    <h1>AnimacionesCSS3 -MOVIMIENTOS</h1>
 
-    <div class="contenedor">
-      <!-- ===== CARD 1 ===== -->
-      <div class="ejercicio">
-        <span class="badge">Institución</span>
-        <h1>MANUEL SEOANE CORRALES</h1>
-        <p>
-          IESTP Manuel Seoane Corrales · Promoción 2026 · Computación e
-          Informática. Formando líderes tecnológicos con valores y excelencia
-          académica.
-        </p>
-        <img src="img/logo.png" alt="Logo Manuel Seoane Corrales" />
-      </div>
+    <table border="<h1>Animcaiones</h1>">
+      <tr>
+      <tr><h1>Tabla de Animaciones </h1>
+        <td><a href="animacion2.html">Movimiento Horizontal</a><br /><br /></td>
 
-      <div class="divisor"></div>
+        <td><a href="animacion1.html">Movimiento Vertical</a><br /><br /></td>
 
-      <!-- ===== CARD 2 ===== -->
-      <div class="ejercicio">
-        <span class="badge">CEO · OpenAI</span>
-        <img src="img/sam-altman.jpg" alt="Foto de Sam Altman" />
-        <h2>Sam Altman</h2>
-        <p>
-          Empresario e inversor estadounidense, conocido por ser el CEO de
-          OpenAI, la empresa detrás de ChatGPT y DALL·E.
-        </p>
-        <img src="img/openai-logo.png" alt="Logo de OpenAI" />
-        <p>
-          Figura clave en el desarrollo de la IA moderna, abogando por un
-          enfoque responsable y accesible.
-        </p>
-      </div>
+        <td><a href="animacion3.html">Movimiento Diagonal</a><br /><br /></td>
 
-      <div class="divisor"></div>
+        <td><a href="animacion4.html">Megamanx</a><br /><br /></td>
 
-      <!-- ===== CARD 3 ===== -->
-      <div class="ejercicio">
-        <span class="badge">CEO · AMD</span>
-        <h2>Dra. Lisa Su</h2>
-        <h2>Presidenta y CEO de AMD</h2>
-        <img src="img/DRA. LISA SU.jpg" alt="Foto de la Dra. Lisa Su" />
-        <p>
-          Ingeniera eléctrica y líder empresarial que transformó AMD en un
-          gigante de los semiconductores.
-        </p>
-        <p>
-          Bajo su liderazgo, AMD lanzó procesadores Ryzen y tarjetas Radeon que
-          compiten con Intel y NVIDIA.
-        </p>
-      </div>
-    </div>
+        <td><a href="Goku SSJ BLUE.html">Goku SSJ BLUE</a><br /></td>
+        <br />
+        <td><img src="img/goku.gif" /></td>
+      </tr>
+      </tr>
+    </table>
   </body>
 </html>
