@@ -1,0 +1,186 @@
+<html>
+  <head>
+    <title>ANIMACION 3 CSS</title>
+
+    <style>
+      
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      
+      .contenedor {
+        width: 400px;
+        height: 200px;
+        margin: 0 auto;
+        border: 1px solid black;
+        background-color: black;
+        position: relative;
+        overflow: hidden;
+      }
+
+      
+      .cuadrito_img {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        
+        animation: rotar 2s infinite ease-in-out;
+        transform: scaleX(2);
+      }
+
+      .cuadrito_img img {
+        width: 100px;
+        transform: scaleX(-1); /* mira a la derecha */
+        filter: drop-shadow(0 0 10px cyan);
+      }
+
+      @keyframes rotar {
+        0% {
+          transform: translateY(-50%) rotate(-5deg);
+        }
+        50% {
+          transform: translateY(-50%) rotate(5deg);
+        }
+        100% {
+          transform: translateY(-50%) rotate(-5deg);
+        }
+      }
+
+      
+      .estrella1,
+      .estrella2,
+      .estrella3,
+      .estrella4,
+      .estrella5,
+      .estrella6,
+      .estrella7,
+      .estrella8,
+      .estrella9,
+      .estrella10 {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background: white;
+      }
+
+      @keyframes estrellas {
+        from {
+          left: 400px;
+        }
+        to {
+          left: -10px;
+        }
+      }
+
+      
+
+      .estrella1 {
+        top: 20px;
+        left: 300px;
+        animation: estrellas 2s linear infinite;
+        animation-delay: 0s;
+        box-shadow: 0 0 6px white;
+        transform: scaleX(2);
+      }
+
+      .estrella2 {
+        top: 80px;
+        left: 150px;
+        animation: estrellas 3s linear infinite;
+        animation-delay: 0.5s;
+      }
+
+      .estrella3 {
+        top: 60px;
+        left: 50px;
+        animation: estrellas 1.5s linear infinite;
+        animation-delay: 1s;
+      }
+
+      .estrella4 {
+        top: 140px;
+        left: 200px;
+        width: 3px;
+        height: 3px;
+        animation: estrellas 1.8s linear infinite;
+        animation-delay: 0.2s;
+      }
+
+      .estrella5 {
+        top: 150px;
+        left: 100px;
+        width: 6px;
+        height: 6px;
+        animation: estrellas 2.5s linear infinite;
+        animation-delay: 1.2s;
+      }
+
+      .estrella6 {
+        top: 180px;
+        left: 250px;
+        width: 3px;
+        height: 3px;
+        animation: estrellas 1.3s linear infinite;
+        animation-delay: 0.8s;
+      }
+
+      .estrella7 {
+        top: 10px;
+        left: 50px;
+        animation: estrellas 2.2s linear infinite;
+        animation-delay: 0.3s;
+      }
+
+      .estrella8 {
+        top: 140px;
+        left: 300px;
+        animation: estrellas 1.6s linear infinite;
+        animation-delay: 1s;
+      }
+
+      .estrella9 {
+        top: 120px;
+        left: 180px;
+        animation: estrellas 2s linear infinite;
+        animation-delay: 0.6s;
+      }
+
+      .estrella10 {
+        top: 90px;
+        left: 20px;
+        animation: estrellas 1.4s linear infinite;
+        animation-delay: 0.9s;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Goku SSJ BLUE</h1>
+
+    <div class="contenedor">
+      <!-- ESTRELLAS -->
+      <div class="estrella1"></div>
+      <div class="estrella2"></div>
+      <div class="estrella3"></div>
+      <div class="estrella4"></div>
+      <div class="estrella5"></div>
+      <div class="estrella6"></div>
+      <div class="estrella7"></div>
+      <div class="estrella8"></div>
+      <div class="estrella9"></div>
+      <div class="estrella10"></div>
+
+      <!-- PERSONAJE -->
+      <div class="cuadrito_img">
+        <img src="img/goku.gif" /
+        width="200px"
+        height="100px">
+      </div>
+    </div>
+
+        <a href="index.html">Volver</a>
+
+  </body>
+</html>

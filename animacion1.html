@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>ANIMACION 3 CSS</title>
+    <style>
+
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        .contenedor{
+            width: 400px;
+            height: 200px;
+            border: 1px solid black;
+            position: relative; /*para centrar el div*/
+            margin: 0 auto; /*para centrar el div*/
+
+            overflow: hidden; /*muestra solo lo interior*/
+            background-color: black;
+
+        }
+
+        .cuadrito{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(219, 210, 210);
+            position: absolute; /*permite mover el div dentro del cuadrito*/
+
+            top: 100px;  /* de arriba hacia abajo "top"*/ 
+            right:200px; /* de izquierda a derecha*/
+
+            animation: cuadrito 1s infinite ease-in;
+            rotate: 5px;
+        }
+
+        @keyframes cuadrito{
+            from{
+                top: 300px
+            }
+            to{
+                top: -100px
+
+            }
+        }
+        .cuadrito img{
+
+            width: 100px;
+            height: 100px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Vertical</h1>
+
+    <div class= "contenedor">
+
+        <div class="cuadrito"> 
+            <img src="img/megamanx.gif" alt="">
+            
+            
+        </div>
+        
+
+    </div>
+
+    <a href="index.html">Volver</a>
+
+
+
+</body>
+</html>
