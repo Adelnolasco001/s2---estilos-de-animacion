@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLIPPATH SEMANA 6</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;  
+        }
+        .contenedor{
+            
+            width: 380px;
+            height: 780px;
+
+            background-image: url(img/img1.png);
+            background-size: cover;
+            
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;                   
+            perspective: 100px;
+        }
+
+        .sombrero{
+        width: 200px;
+        height: 150px;
+
+        position: absolute;
+        top: 5px;
+        left: 100px;
+        background-color: blueviolet;
+
+/*         background-image: url(img/sombrero-luffy.webp);
+ */        background-size: cover;
+        z-index: 1;
+
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+
+
+
+        .cara{
+            
+            width: 160px;
+            height: 160px;
+            position: absolute;
+            top: 105px;
+            left:110px;
+            background-color: aqua;
+
+/*             background-image: url(img/sombrero-luffy.webp);
+ */
+            background-size: cover;
+            
+
+            clip-path: circle(50% at 50% 50%);
+
+
+        }
+        .cuerpo{
+        width: 220px;
+        height: 250px;
+
+        position: absolute;
+        top: 265px;
+        left: 90px;
+
+        background-color: green;
+
+        clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+    .brazos{
+
+        width: 390px;
+        height: 50px;
+        position:absolute;
+        background-color: rgb(68, 127, 236);
+        top: 350px;
+        left:5px;
+        z-index: 2;
+         clip-path: polygon(
+        5% 50%,
+        10% 0%,
+        90% 0%,
+        95% 50%,
+        90% 100%,
+        10% 100%
+    );
+    }
+    .pie1{
+
+        width: 150PX;
+        height:150px;
+        position:absolute;
+        background-color: rgb(223, 41, 50);
+        top: 450px;
+        left: 20px;
+
+        clip-path: polygon(19% 42%, 88% 41%, 89% 70%, 18% 70%);
+
+
+    }
+
+    .pie2{
+
+        width: 150px;
+        height:150px;
+        position:absolute;
+        background-color: rgb(238, 66, 24);
+        top:450px;
+        left: 220px;
+        clip-path: polygon(19% 42%, 88% 41%, 89% 70%, 18% 70%);
+
+    }
+    .cono_helado{
+        width: 110px;
+        height: 120px;
+
+        position: absolute;
+        top: 255px;
+        left: 270px;
+        background-color: blueviolet;
+
+/*         background-image: url(img/sombrero-luffy.webp);
+ */        background-size: cover;
+        z-index: 1;
+
+        
+        clip-path: polygon(50% 97%, 0 0, 100% 0);
+    }
+
+    .bola_helado1{
+            
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: 200px;
+            left:320px;
+            background-color: aqua;
+
+/*             background-image: url(img/sombrero-luffy.webp);
+ */
+            background-size: cover;
+            
+
+            clip-path: circle(50% at 50% 50%);
+
+    }
+    .bola_helado2{
+            
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: 200px;
+            left:270px;
+            background-color: aqua;
+
+/*             background-image: url(img/sombrero-luffy.webp);
+ */
+            background-size: cover;
+            
+
+            clip-path: circle(50% at 50% 50%);
+
+    }
+    .bola_helado3{
+        
+            
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: 155px;
+            left:289px;
+            background-color: aqua;
+
+/*             background-image: url(img/sombrero-luffy.webp);
+ */
+            background-size: cover;
+            
+
+            clip-path: circle(50% at 50% 50%);
+
+    
+    }
+    @keyframes parallax {
+
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-20px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+       
+            
+        
+
+
+    </style>
+
+</head>
+<body>
+
+    <div class="contenedor">
+        
+    <div class="sombrero"></div>
+    <div class="cara"></div>
+    <div class="cuerpo"></div>
+    <div class="brazos"></div>
+    <div class="pie1"></div>
+    <div class="pie2"></div>
+    <div class="cono_helado"></div>
+    <div class="bola_helado1"></div>
+    <div class="bola_helado2"></div>
+    <div class="bola_helado3"></div>
+
+
+    </div>
+
+</body>
+</html>
