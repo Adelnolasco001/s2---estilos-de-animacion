@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CYBERPUNK DRIVE PARALLAX</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:black;
+    overflow:hidden;
+}
+
+/* ESCENA */
+
+.escena{
+    width:100vw;
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+}
+
+/* CIUDAD FONDO */
+
+.ciudad{
+    position:absolute;
+    inset:-3%;
+
+    background:url(img/background-city.png);
+    background-size:cover;
+    background-position:center;
+
+    animation:ciudad 25s linear infinite;
+
+    z-index:1;
+}
+
+/* EDIFICIOS */
+
+.edificios{
+    position:absolute;
+
+    bottom:170px;
+    left:0;
+
+    width:160%;
+    height:280px;
+
+    background:url(img/edificios_lejanos.png);
+    background-repeat:repeat-x;
+    background-size:auto 100%;
+
+    animation:edificios 12s linear infinite;
+
+    filter:blur(1px);
+
+    z-index:5;
+}
+
+/* PISTA */
+
+.pista{
+    position:absolute;
+
+    bottom:0;
+    left:0;
+
+    width:250%;
+    height:260px;
+
+    background:url(img/road.png);
+    background-repeat:repeat-x;
+    background-size:auto 100%;
+
+    animation:pista 3s linear infinite;
+
+    z-index:10;
+}
+
+/* PARTICULAS */
+
+.particulas{
+    position:absolute;
+
+    inset:0;
+
+    background:url(img/particulas.png);
+    background-size:cover;
+    background-position:center;
+
+    opacity:.45;
+
+    z-index:15;
+
+    animation:particulas 5s linear infinite;
+}
+
+/* AUTO */
+
+.car{
+    position:absolute;
+
+    width:480px;
+
+    bottom:55px;
+    left:50%;
+
+    z-index:20;
+
+    animation:
+    flotar 2s ease-in-out infinite,
+    conducir 6s ease-in-out infinite;
+}
+
+.car img{
+    width:100%;
+
+    filter:
+    drop-shadow(0 0 10px cyan)
+    drop-shadow(0 0 30px blue)
+    drop-shadow(0 0 60px cyan);
+}
+
+/* REFLEJOS */
+
+.reflejos{
+    position:absolute;
+
+    inset:0;
+
+    background:url(img/reflejos_de_luz.png);
+    background-size:cover;
+    background-position:center;
+
+    opacity:.45;
+
+    mix-blend-mode:screen;
+
+    z-index:25;
+
+    pointer-events:none;
+
+    animation:reflejos 3s ease-in-out infinite;
+}
+
+/* HUD */
+
+.hud{
+    position:absolute;
+
+    inset:0;
+
+    background:url(img/hub_futurista.png);
+    background-size:cover;
+    background-position:center;
+
+    opacity:.25;
+
+    z-index:30;
+
+    pointer-events:none;
+}
+
+/* TITULO */
+
+.titulo{
+    position:absolute;
+
+    top:20px;
+    width:100%;
+
+    text-align:center;
+
+    color:cyan;
+
+    font-family:Arial;
+
+    font-size:38px;
+
+    font-weight:bold;
+
+    letter-spacing:6px;
+
+    text-shadow:
+    0 0 10px cyan,
+    0 0 20px cyan,
+    0 0 40px cyan;
+
+    z-index:40;
+}
+
+/* ANIMACIONES */
+
+@keyframes ciudad{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-60px);
+    }
+}
+
+@keyframes edificios{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-350px);
+    }
+}
+
+@keyframes pista{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-1500px);
+    }
+}
+
+@keyframes particulas{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-250px);
+    }
+}
+
+@keyframes reflejos{
+    0%{
+        opacity:.25;
+    }
+
+    50%{
+        opacity:.6;
+    }
+
+    100%{
+        opacity:.25;
+    }
+}
+
+@keyframes flotar{
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+@keyframes conducir{
+    0%{
+        left:49%;
+    }
+
+    50%{
+        left:51%;
+    }
+
+    100%{
+        left:49%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="escena">
+
+    <div class="ciudad"></div>
+
+    <div class="edificios"></div>
+
+    <div class="pista"></div>
+
+    <div class="particulas"></div>
+
+    <div class="car">
+        <img src="img/car.png" alt="">
+    </div>
+
+    <div class="reflejos"></div>
+
+    <div class="hud"></div>
+
+    <div class="titulo">
+        CYBERPUNK DRIVE
+    </div>
+
+</div>
+
+</body>
+</html>

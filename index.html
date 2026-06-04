@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repositorio de Proyectos</title>
+    <style>
+      
+        
+        body {
+            font-family: 'Century Gothic', Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+            text-align: center; /*centra el texto  */
+        }
+
+        /*caja o variable para cadaa ejercc*/
+        .ejercicio {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /*limites de la imagen*/
+        img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        
+        /* -aparecer lento */
+        @keyframes aparecer {
+            0%   { opacity: 0; }    /* sale invisible */
+            100% { opacity: 1; }    /* Termina visible */
+        }
+
+        /* --de abajo pa arriba*/
+        @keyframes deslizarArriba {
+            0%   { 
+                opacity: 0; 
+                transform: translateY(100px); /* distancia desde abajp */
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0);    /* lugar asignado */
+            }
+        }
+/* todos apareceran  */
+        
+        h1, h2, p {
+            animation-name: aparecer;
+            animation-duration: 2s;      /* 2s aparecer */
+            animation-fill-mode: both;   /* Se ve*/
+        }
+
+        /* Llas imagenes aparecen de abajo para rriba  */
+        img {
+            animation-name: deslizarArriba;
+            animation-duration: 1.5s;
+            animation-fill-mode: both;
+        }
+        /* retraso entre cada elemento  */
+        .ejercicio h1 {
+            animation-delay: 0.2s;  /* title */
+        }
+        .ejercicio h2 {
+            animation-delay: 0.5s;  /*subtítulo */ 
+        }
+        .ejercicio p {
+            animation-delay: 0.8s;/* parrfos */
+        }
+        .ejercicio img {
+            animation-delay: 1.1s;  /* imgs */
+        }
+
+        img:hover {
+            transform: scale(1.02);      /* Aumenta ligeramente , hace como que se marque */
+            transition: transform 0.3s;   /* crea como textura al pasar el mouse */
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+    </style>
+    </style>
+  </head>
+
+  <body>
+    <h1>Repositorio de Proyectos Animación de Gráficos</h1>
+
+
+    <ul>
+
+      <li><h2><a href="Actividades_clase/index.html">Actividades de Clase</a></h2></li>
+
+      <li><h2><a href="Semana1-Tablero/index.html">Semana 1</a></h2></li>
+
+      <li></li>
+
+    </ul>
+
+        
+
+
+    
+
+    <h2><a href="Semana2/index.html">Semana 2</a></h2>
+
+    <h2><a href="Semana3_CSS/index.html">Semana 3</a></h2>
+
+    <h2><a href="Semana6/index.html">Semana 6<a></h2>
+    <br>
+    <h2><a href="Semana7-Movimiento/index.html">Semana7-Movimiento</a></h2>
+
+    <br>
+  </body>
+</html>

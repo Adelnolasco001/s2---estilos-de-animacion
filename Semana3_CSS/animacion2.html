@@ -1,0 +1,115 @@
+<html>
+<head>
+    <title>Animacion Horizontal </title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background: #0b0f1a;
+            color: white;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        h1{
+            margin: 20px;
+        }
+
+        .contenedor{
+            width: 400px;
+            height: 200px;
+            border: 1px solid #222;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+            background: black;
+        }
+
+        /* personaje */
+        .cuadrito{
+            position: absolute;
+            top: 50%;
+            left: -120px;
+            transform: translateY(-50%);
+            animation: mover 3s infinite linear;
+        }
+
+        .cuadrito img{
+            width: 100px;
+            filter: drop-shadow(0 0 10px cyan);
+        }
+
+        
+        @keyframes mover{
+            0%{
+                left: -120px;
+                transform: translateY(-50%) scale(0.9);
+            }
+
+            50%{
+                transform: translateY(-50%) scale(1.05);
+            }
+
+            100%{
+                left: 420px;
+                transform: translateY(-50%) scale(0.9);
+            }
+        }
+
+        /* asteroides rapidos */
+        .linea{
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: white;
+            opacity: 0.3;
+            animation: lineas 1s linear infinite;
+        }
+
+        @keyframes lineas{
+            from{
+                left: 400px;
+            }
+            to{
+                left: -50px;
+            }
+        }
+
+        /* diferentes velociades */
+        .l1{ top: 40px; animation-duration: 0.8s;}
+        .l2{ top: 80px; animation-duration: 1s;}
+        .l3{ top: 120px; animation-duration: 0.6s;}
+        .l4{ top: 160px; animation-duration: 1.2s;}
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Movimiento Horizontal </h1>
+
+    <div class="contenedor">
+
+        <!-- lineas vel -->
+        <div class="linea l1"></div>
+        <div class="linea l2"></div>
+        <div class="linea l3"></div>
+        <div class="linea l4"></div>
+
+        <div class="cuadrito">
+            <img src="img/megamanx.gif">
+        </div>
+
+    </div>
+
+    <br>
+    <a href="index.html">Volver</a>
+
+</body>
+</html>
