@@ -1,13 +1,356 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Semana6</title>
-  </head>
 
-  <body>
-    <h2><a href="Efecto_parallax.html">Semana 6-2</a></h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 6 - Cyberpunk Drive</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: black;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* ESCENA PRINCIPAL */
+        .escena {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* FONDO DE LA CIUDAD */
+        .ciudad {
+            position: absolute;
+            inset: -3%;
+
+            background: url("img/background-city.png");
+            background-size: cover;
+            background-position: center;
+
+            animation: ciudad 25s linear infinite;
+
+            z-index: 1;
+        }
+
+        /* EDIFICIOS */
+        .edificios {
+            position: absolute;
+
+            bottom: 170px;
+            left: 0;
+
+            width: 160%;
+            height: 280px;
+
+            background: url("img/edificios_lejanos.png");
+            background-repeat: repeat-x;
+            background-size: auto 100%;
+
+            filter: blur(1px);
+
+            animation: edificios 12s linear infinite;
+
+            z-index: 5;
+        }
+
+        /* PISTA */
+        .pista {
+            position: absolute;
+
+            bottom: 0;
+            left: 0;
+
+            width: 250%;
+            height: 260px;
+
+            background: url("img/road.png");
+            background-repeat: repeat-x;
+            background-size: auto 100%;
+
+            animation: pista 3s linear infinite;
+
+            z-index: 10;
+        }
+
+        /* PARTÍCULAS */
+        .particulas {
+            position: absolute;
+            inset: 0;
+
+            background: url("img/particulas.png");
+            background-size: cover;
+            background-position: center;
+
+            opacity: 0.45;
+
+            animation: particulas 5s linear infinite;
+
+            z-index: 15;
+        }
+
+        /* AUTO */
+        .car {
+            position: absolute;
+
+            width: 480px;
+
+            bottom: 55px;
+            left: 50%;
+
+            margin-left: -240px;
+
+            z-index: 20;
+
+            animation:
+                flotar 2s ease-in-out infinite,
+                conducir 6s ease-in-out infinite;
+        }
+
+        .car img {
+            width: 100%;
+
+            filter:
+                drop-shadow(0 0 10px cyan)
+                drop-shadow(0 0 30px blue)
+                drop-shadow(0 0 60px cyan);
+        }
+
+        /* REFLEJOS */
+        .reflejos {
+            position: absolute;
+            inset: 0;
+
+            background: url("img/reflejos_de_luz.png");
+            background-size: cover;
+            background-position: center;
+
+            opacity: 0.45;
+
+            mix-blend-mode: screen;
+
+            animation: reflejos 3s ease-in-out infinite;
+
+            pointer-events: none;
+
+            z-index: 25;
+        }
+
+        /* HUD */
+        .hud {
+            position: absolute;
+            inset: 0;
+
+            background: url("img/hub_futurista.png");
+            background-size: cover;
+            background-position: center;
+
+            opacity: 0.25;
+
+            pointer-events: none;
+
+            z-index: 30;
+        }
+
+        /* TÍTULO */
+        .titulo {
+            position: absolute;
+
+            top: 20px;
+            width: 100%;
+
+            text-align: center;
+
+            color: cyan;
+
+            font-size: 38px;
+            font-weight: bold;
+
+            letter-spacing: 6px;
+
+            text-shadow:
+                0 0 10px cyan,
+                0 0 20px cyan,
+                0 0 40px cyan;
+
+            z-index: 40;
+        }
+
+        .subtitulo {
+            margin-top: 10px;
+
+            font-size: 16px;
+            font-weight: normal;
+
+            letter-spacing: 2px;
+
+            color: white;
+        }
+
+        /* BOTÓN VOLVER */
+        .volver {
+            position: absolute;
+
+            top: 20px;
+            left: 20px;
+
+            background: #1e293b;
+            color: white;
+
+            text-decoration: none;
+
+            padding: 10px 18px;
+
+            border-radius: 8px;
+
+            z-index: 999;
+        }
+
+        .volver:hover {
+            background: #334155;
+        }
+
+        /* ANIMACIONES */
+        @keyframes ciudad {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-60px);
+            }
+        }
+
+        @keyframes edificios {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-350px);
+            }
+        }
+
+        @keyframes pista {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-1500px);
+            }
+        }
+
+        @keyframes particulas {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-250px);
+            }
+        }
+
+        @keyframes reflejos {
+            0% {
+                opacity: 0.25;
+            }
+
+            50% {
+                opacity: 0.60;
+            }
+
+            100% {
+                opacity: 0.25;
+            }
+        }
+
+        @keyframes flotar {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes conducir {
+            0% {
+                left: 49%;
+            }
+
+            50% {
+                left: 51%;
+            }
+
+            100% {
+                left: 49%;
+            }
+        }
     
-  </body>
+.volver{
+    background-color: #040404;;/* color de fodo */
+    color: white;/* color de letra */
+    margin: 10px;/* espacio a los lados  */
+    padding: 10px ;/* espacio interno */
+    border-radius: 8px;/* borde redondeado */
+    display: inline block;
+
+
+
+}
+    </style>
+</head>
+
+<body>
+
+    <a href="../index.html" class="volver">Volver al Inicio</a>
+
+    <div class="escena">
+
+        <div class="ciudad"></div>
+
+        <div class="edificios"></div>
+
+        <div class="pista"></div>
+
+        <div class="particulas"></div>
+
+        <div class="car">
+            <img src="img/car.png" alt="Auto Cyberpunk">
+        </div>
+
+        <div class="reflejos"></div>
+
+        <div class="hud"></div>
+
+        <div class="titulo">
+            CYBERPUNK DRIVE
+
+            <p class="subtitulo">
+                Animación Parallax creada con HTML y CSS
+            </p>
+        </div>
+
+    </div>
+
+    <audio autoplay loop>
+    <source src="../audio/musica_4.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+
 </html>
