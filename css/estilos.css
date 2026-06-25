@@ -1,0 +1,127 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-image: url("../img/fondo.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color:white;
+
+    text-align:center;
+}
+
+/* ENCABEZADO */
+
+.encabezado{
+
+    padding:30px;
+}
+
+.encabezado h1{
+
+    font-size:40px;
+
+    color:#38bdf8;
+
+    margin-bottom:10px;
+}
+
+.encabezado h2{
+
+    margin-bottom:20px;
+}
+
+.presentacion{
+
+    width:80%;
+
+    margin:auto;
+
+    line-height:1.6;
+}
+
+/* CONTENEDOR */
+
+.contenedor{
+
+    width:90%;
+
+    margin:20px auto;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:20px;
+}
+
+/* TARJETAS */
+
+.ejercicio{
+
+    width:250px;
+
+    background-color:rgba(0,0,0,0.7);
+
+    border-radius:10px;
+
+    padding:15px;
+}
+
+.ejercicio img{
+
+    width:100%;
+
+    height:180px;
+
+    border-radius:10px;
+}
+
+/* TITULOS */
+
+.ejercicio h3{
+
+    margin:10px 0;
+
+    color:#38bdf8;
+}
+
+.ejercicio p{
+
+    margin:10px 0;
+}
+
+/* BOTONES */
+
+.ejercicio a{
+
+    display:inline-block;
+
+    margin-top:10px;
+
+    padding:10px 20px;
+
+    background-color:#2563eb;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:8px;
+}
+
+.ejercicio a:hover{
+
+    background-color:#1d4ed8;
+}
