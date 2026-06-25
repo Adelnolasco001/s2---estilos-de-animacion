@@ -1,122 +1,100 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Repositorio de Proyectos</title>
-    <style>
-      
-        
-        body {
-            font-family: 'Century Gothic', Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 20px;
-            text-align: center; /*centra el texto  */
-        }
 
-        /*caja o variable para cadaa ejercc*/
-        .ejercicio {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            padding: 20px;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /*limites de la imagen*/
-        img {
-            max-width: 200px;
-            height: auto;
-            border-radius: 8px;
-            margin: 10px 0;
-        }
+```
+<title>Portafolio Web - Kevin Nolasco Carrera</title>
 
-        
-        /* -aparecer lento */
-        @keyframes aparecer {
-            0%   { opacity: 0; }    /* sale invisible */
-            100% { opacity: 1; }    /* Termina visible */
-        }
+<link rel="stylesheet" href="css/estilos.css">
+```
 
-        /* --de abajo pa arriba*/
-        @keyframes deslizarArriba {
-            0%   { 
-                opacity: 0; 
-                transform: translateY(100px); /* distancia desde abajp */
-            }
-            100% { 
-                opacity: 1; 
-                transform: translateY(0);    /* lugar asignado */
-            }
-        }
-/* todos apareceran  */
-        
-        h1, h2, p {
-            animation-name: aparecer;
-            animation-duration: 2s;      /* 2s aparecer */
-            animation-fill-mode: both;   /* Se ve*/
-        }
+</head>
 
-        /* Llas imagenes aparecen de abajo para rriba  */
-        img {
-            animation-name: deslizarArriba;
-            animation-duration: 1.5s;
-            animation-fill-mode: both;
-        }
-        /* retraso entre cada elemento  */
-        .ejercicio h1 {
-            animation-delay: 0.2s;  /* title */
-        }
-        .ejercicio h2 {
-            animation-delay: 0.5s;  /*subtítulo */ 
-        }
-        .ejercicio p {
-            animation-delay: 0.8s;/* parrfos */
-        }
-        .ejercicio img {
-            animation-delay: 1.1s;  /* imgs */
-        }
+<body>
 
-        img:hover {
-            transform: scale(1.02);      /* Aumenta ligeramente , hace como que se marque */
-            transition: transform 0.3s;   /* crea como textura al pasar el mouse */
-            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-        }
+```
+<div class="encabezado">
 
-    </style>
-    </style>
-  </head>
+    <h1>Kevin Nolasco Carrera</h1>
 
-  <body>
-    <h1>Repositorio de Proyectos Animación de Gráficos</h1>
+    <h2>Portafolio de Desarrollo Web 2026</h2>
 
+    <p class="presentacion">
+        Bienvenido a mi portafolio web. Aquí encontrarás los proyectos,
+        prácticas y actividades desarrolladas durante el curso,
+        utilizando tecnologías como HTML, CSS, JavaScript y herramientas modernas de desarrollo web.
+    </p>
 
-    <ul>
+</div>
 
-      <li><h2><a href="Actividades_clase/index.html">Actividades de Clase</a></h2></li>
+<div class="contenedor">
 
-      <li><h2><a href="Semana1-Tablero/index.html">Semana 1</a></h2></li>
+    <div class="ejercicio">
+        <h3>Actividades de Clase</h3>
+        <img src="img/actividades_1.gif" alt="Actividades">
+        <a href="Actividades_clase/index.html">Ver actividades</a>
+    </div>
 
-      <li></li>
+    <div class="ejercicio">
+        <h3>Semana 1</h3>
+        <img src="img/ajedrez_1.gif" alt="Semana 1">
+        <p>Tablero de Ajedrez</p>
+        <a href="Semana1-Tablero/index.html">Abrir</a>
+    </div>
 
-    </ul>
+    <div class="ejercicio">
+        <h3>Semana 2</h3>
+        <img src="img/cohete_1.gif" alt="Semana 2">
+        <p>Animación de Cohete</p>
+        <a href="Semana2/index.html">Abrir</a>
+    </div>
 
-        
+    <div class="ejercicio">
+        <h3>Semana 3</h3>
+        <img src="img/semana_3goku.gif" alt="Semana 3">
+        <p>Movimientos CSS</p>
+        <a href="Semana3_CSS/index.html">Abrir</a>
+    </div>
 
+    <div class="ejercicio">
+        <h3>Semana 4</h3>
+        <img src="img/semana4.gif" alt="Semana 4">
+        <p>Tarjetas Animadas</p>
+        <a href="Semana4/index.html">Abrir</a>
+    </div>
 
-    
+    <div class="ejercicio">
+        <h3>Semana 5</h3>
+        <img src="img/broly.gif" alt="Semana 5">
+        <p>Efecto Parallax</p>
+        <a href="Semana5/index.html">Abrir</a>
+    </div>
 
-    <h2><a href="Semana2/index.html">Semana 2</a></h2>
+    <div class="ejercicio">
+        <h3>Semana 6</h3>
+        <img src="img/gojo.gif" alt="Semana 6">
+        <p>Cyberpunk Parallax</p>
+        <a href="Semana6/index.html">Abrir</a>
+    </div>
 
-    <h2><a href="Semana3_CSS/index.html">Semana 3</a></h2>
+    <div class="ejercicio">
+        <h3>Semana 7</h3>
+        <img src="img/eren_semana7.gif" alt="Semana 7">
+        <p>Parallax + SVG</p>
+        <a href="Semana7-Movimiento/index.html">Abrir</a>
+    </div>
 
-    <h2><a href="Semana6/index.html">Semana 6<a></h2>
-    <br>
-    <h2><a href="Semana7-Movimiento/index.html">Semana7-Movimiento</a></h2>
+</div>
 
-    <br>
-  </body>
+<audio autoplay loop>
+    <source src="./audio/musica.mp3" type="audio/mpeg">
+</audio>
+```
+
+</body>
+
 </html>
