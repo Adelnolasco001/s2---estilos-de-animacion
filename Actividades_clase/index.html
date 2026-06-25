@@ -1,13 +1,212 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1><a href="semana1_clase/semana1_clase.html">semana1 clase</a></h1>
+<!DOCTYPE html>
+<html lang="es">
 
-    <h1><a href="semana6_clase/personaje.html">semana 6-personaje</a></h1>
-  </body>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actividades de Clase</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+
+            font-family:Arial, sans-serif;
+
+            background-image:
+            linear-gradient(
+                rgba(0,0,0,.6),
+                rgba(0,0,0,.6)
+            ),
+            url(img/fondo.jpg);
+
+            background-size:cover;
+            background-position:center;
+            background-attachment:fixed;
+
+            color:white;
+
+            min-height:100vh;
+        }
+
+        .titulo{
+
+            text-align:center;
+
+            padding:40px 20px;
+        }
+
+        .titulo h1{
+
+            font-size:45px;
+
+            color:#38bdf8;
+
+            margin-bottom:10px;
+
+            text-shadow:
+            0 0 10px #38bdf8;
+        }
+
+        .titulo p{
+
+            font-size:18px;
+
+            color:#e5e7eb;
+        }
+
+        .contenedor{
+
+            width:90%;
+
+            max-width:900px;
+
+            margin:30px auto;
+
+            display:flex;
+
+            flex-wrap:wrap;
+
+            justify-content:center;
+
+            gap:25px;
+        }
+
+        .tarjeta{
+
+            width:300px;
+
+            background:rgba(255,255,255,.1);
+
+            border-radius:15px;
+
+            padding:20px;
+
+            text-align:center;
+
+            border:1px solid rgba(255,255,255,.2);
+        }
+
+        .tarjeta h2{
+
+            color:#38bdf8;
+
+            margin-bottom:15px;
+        }
+
+        .tarjeta p{
+
+            margin-bottom:20px;
+
+            color:#d1d5db;
+        }
+
+        .tarjeta a{
+
+            display:inline-block;
+
+            background:#2563eb;
+
+            color:white;
+
+            text-decoration:none;
+
+            padding:12px 20px;
+
+            border-radius:8px;
+        }
+
+        .tarjeta a:hover{
+
+            background:#1d4ed8;
+        }
+
+        .volver{
+
+            display:inline-block;
+
+            margin:20px;
+
+            background:#1e293b;
+
+            color:white;
+
+            text-decoration:none;
+
+            padding:12px 20px;
+
+            border-radius:8px;
+        }
+
+        .volver:hover{
+
+            background:#334155;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <a href="../index.html" class="volver">
+        Volver al Portafolio
+    </a>
+
+    <div class="titulo">
+
+        <h1>Actividades de Clase</h1>
+
+        <p>
+            Ejercicios y prácticas desarrolladas durante el curso.
+        </p>
+
+    </div>
+
+    <div class="contenedor">
+
+        <div class="tarjeta">
+
+            <h2>Semana 1</h2>
+
+            <p>
+                Actividad realizada durante la primera semana de clases.
+            </p>
+
+            <a href="semana1_clase/semana1_clase.html">
+                Abrir Actividad
+            </a>
+
+        </div>
+
+        <div class="tarjeta">
+
+            <h2>Semana 6</h2>
+
+            <p>
+                Personaje creado utilizando Clip-Path y CSS.
+            </p>
+
+            <a href="semana6_clase/personaje.html">
+                Abrir Actividad
+            </a>
+
+        </div>
+
+    </div>
+
+    <audio autoplay loop>
+        <source src="../audio/musica_2.mp3" type="audio/mpeg">
+    </audio>
+
+</body>
+
 </html>

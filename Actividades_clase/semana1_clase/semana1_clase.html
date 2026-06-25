@@ -1,11 +1,149 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Holaaaaaaaaaaaaa</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Gamer</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+
+            font-family:Arial, sans-serif;
+
+            background:linear-gradient(
+                135deg,
+                #0f172a,
+                #1e293b
+            );
+
+            height:100vh;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .tarjeta{
+
+            width:320px;
+
+            background:white;
+
+            border-radius:15px;
+
+            overflow:hidden;
+
+            text-align:center;
+
+            box-shadow:0 0 20px rgba(0,0,0,0.4);
+
+            transition:0.3s;
+        }
+
+        .tarjeta:hover{
+
+            transform:scale(1.05);
+        }
+
+        .tarjeta img{
+
+            width:100%;
+            height:250px;
+
+            object-fit:cover;
+        }
+
+        .contenido{
+
+            padding:20px;
+        }
+
+        h1{
+
+            color:#2563eb;
+
+            margin-bottom:10px;
+        }
+
+        p{
+
+            color:#555;
+
+            margin-bottom:15px;
+        }
+
+        a{
+
+            display:inline-block;
+
+            text-decoration:none;
+
+            background:#2563eb;
+
+            color:white;
+
+            padding:10px 20px;
+
+            border-radius:8px;
+        }
+
+        a:hover{
+
+            background:#1d4ed8;
+        }
+
+
+.volver{
+    background-color: #1e293b;;/* color de fodo */
+    color: white;/* color de letra */
+    margin: 10px;/* espacio a los lados  */
+    padding: 10px ;/* espacio interno */
+    border-radius: 8px;/* borde redondeado */
+    display: inline block;
+
+
+
+}
+
+    </style>
+</head>
+
+<body>
+
+    <div class="tarjeta">
+
+        <img src="https://picsum.photos/400/300" alt="Perfil">
+
+        <div class="contenido">
+
+            <h1>Kevin Nolasco</h1>
+
+            <p>
+                Estudiante de Desarrollo Web apasionado por HTML y CSS.
+            </p>
+
+            <a href="#">Ver Perfil</a>
+
+        </div>
+
+    </div><br>
+    <br>
+    <br>
+    <a href="../index.html" class="Volver">Volver al Inicio</a>
+
+
+    <audio autoplay loop>
+    <source src="../audio/musica.mp3" type="audio/mpeg">
+
+</audio>
+</body>
+
 </html>

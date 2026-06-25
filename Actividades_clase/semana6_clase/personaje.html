@@ -1,189 +1,376 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CLIPPATH SEMANA 6</title>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLIP PATH SEMANA 6</title>
 
     <style>
-      * {
-        padding: 0;
-        margin: 0;
-      }
-      .contenedor {
-        width: 380px;
-        height: 780px;
-
-        background-image: url(img/img1.png);
-        background-size: cover;
-
-        margin: 0 auto;
-        position: relative;
-        overflow: hidden;
-        perspective: 100px;
-      }
-
-      .sombrero {
-        width: 200px;
-        height: 150px;
-
-        position: absolute;
-        top: 5px;
-        left: 100px;
-        background-color: blueviolet;
-
-        /*         background-image: url(img/sombrero-luffy.webp);
- */
-        background-size: cover;
-        z-index: 1;
-
-        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-      }
-
-      .cara {
-        width: 160px;
-        height: 160px;
-        position: absolute;
-        top: 105px;
-        left: 110px;
-        background-color: aqua;
-
-        /*             background-image: url(img/sombrero-luffy.webp);
- */
-        background-size: cover;
-
-        clip-path: circle(50% at 50% 50%);
-      }
-      .cuerpo {
-        width: 220px;
-        height: 250px;
-
-        position: absolute;
-        top: 265px;
-        left: 90px;
-
-        background-color: green;
-
-        clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
-      }
-      .brazos {
-        width: 390px;
-        height: 50px;
-        position: absolute;
-        background-color: rgb(68, 127, 236);
-        top: 350px;
-        left: 5px;
-        z-index: 2;
-        clip-path: polygon(5% 50%, 10% 0%, 90% 0%, 95% 50%, 90% 100%, 10% 100%);
-      }
-      .pie1 {
-        width: 150px;
-        height: 150px;
-        position: absolute;
-        background-color: rgb(223, 41, 50);
-        top: 450px;
-        left: 20px;
-
-        clip-path: polygon(19% 42%, 88% 41%, 89% 70%, 18% 70%);
-      }
-
-      .pie2 {
-        width: 150px;
-        height: 150px;
-        position: absolute;
-        background-color: rgb(238, 66, 24);
-        top: 450px;
-        left: 220px;
-        clip-path: polygon(19% 42%, 88% 41%, 89% 70%, 18% 70%);
-      }
-      .cono_helado {
-        width: 110px;
-        height: 120px;
-
-        position: absolute;
-        top: 255px;
-        left: 270px;
-        background-color: blueviolet;
-
-        /*         background-image: url(img/sombrero-luffy.webp);
- */
-        background-size: cover;
-        z-index: 1;
-
-        clip-path: polygon(50% 97%, 0 0, 100% 0);
-      }
-
-      .bola_helado1 {
-        width: 60px;
-        height: 60px;
-        position: absolute;
-        top: 200px;
-        left: 320px;
-        background-color: aqua;
-
-        /*             background-image: url(img/sombrero-luffy.webp);
- */
-        background-size: cover;
-
-        clip-path: circle(50% at 50% 50%);
-      }
-      .bola_helado2 {
-        width: 60px;
-        height: 60px;
-        position: absolute;
-        top: 200px;
-        left: 270px;
-        background-color: aqua;
-
-        /*             background-image: url(img/sombrero-luffy.webp);
- */
-        background-size: cover;
-
-        clip-path: circle(50% at 50% 50%);
-      }
-      .bola_helado3 {
-        width: 60px;
-        height: 60px;
-        position: absolute;
-        top: 155px;
-        left: 289px;
-        background-color: aqua;
-
-        /*             background-image: url(img/sombrero-luffy.webp);
- */
-        background-size: cover;
-
-        clip-path: circle(50% at 50% 50%);
-      }
-      @keyframes parallax {
-        0% {
-          transform: translateY(0px);
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
 
-        50% {
-          transform: translateY(-20px);
+        body{
+
+            font-family:Arial, sans-serif;
+
+            background-image:
+            linear-gradient(
+                rgba(0,0,0,.5),
+                rgba(0,0,0,.5)
+            ),
+            url(img/fondo.jpg);
+
+            background-size:cover;
+            background-position:center;
+            background-attachment:fixed;
+
+            min-height:100vh;
         }
 
-        100% {
-          transform: translateY(0px);
+        .titulo{
+
+            text-align:center;
+
+            color:white;
+
+            margin:20px;
+
+            font-size:35px;
+
+            text-shadow:
+            0 0 10px cyan,
+            0 0 20px cyan;
         }
-      }
+
+        .contenedor{
+
+            width:380px;
+            height:780px;
+
+            background-image:url(img/img1.png);
+            background-size:cover;
+            background-position:center;
+
+            margin:20px auto;
+
+            position:relative;
+
+            overflow:hidden;
+
+            border-radius:20px;
+
+            border:3px solid cyan;
+
+            box-shadow:
+            0 0 20px cyan,
+            0 0 40px cyan;
+        }
+
+        .sombrero{
+
+            width:200px;
+            height:150px;
+
+            position:absolute;
+
+            top:5px;
+            left:100px;
+
+            background-color:gold;
+
+            clip-path:polygon(50% 0%, 0% 100%, 100% 100%);
+
+            z-index:2;
+
+            animation:parallax 3s infinite;
+
+            box-shadow:0 0 15px rgba(0,0,0,.5);
+        }
+
+        .cara{
+
+            width:160px;
+            height:160px;
+
+            position:absolute;
+
+            top:105px;
+            left:110px;
+
+            background-color:#ffd6a5;
+
+            clip-path:circle(50% at 50% 50%);
+
+            animation:parallax 3s infinite;
+
+            box-shadow:0 0 15px rgba(0,0,0,.5);
+
+            z-index:3;
+        }
+
+        .ojo1,
+        .ojo2{
+
+            width:15px;
+            height:15px;
+
+            background:black;
+
+            border-radius:50%;
+
+            position:absolute;
+
+            top:60px;
+        }
+
+        .ojo1{
+            left:45px;
+        }
+
+        .ojo2{
+            right:45px;
+        }
+
+        .boca{
+
+            width:50px;
+            height:20px;
+
+            border-bottom:4px solid black;
+
+            position:absolute;
+
+            top:100px;
+            left:55px;
+        }
+
+        .cuerpo{
+
+            width:220px;
+            height:250px;
+
+            position:absolute;
+
+            top:265px;
+            left:90px;
+
+            background-color:green;
+
+            clip-path:polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+
+            animation:parallax 3s infinite;
+
+            box-shadow:0 0 15px rgba(0,0,0,.5);
+        }
+
+        .brazos{
+
+            width:390px;
+            height:50px;
+
+            position:absolute;
+
+            top:350px;
+            left:5px;
+
+            background-color:rgb(68,127,236);
+
+            z-index:2;
+
+            clip-path:polygon(
+                5% 50%,
+                10% 0%,
+                90% 0%,
+                95% 50%,
+                90% 100%,
+                10% 100%
+            );
+
+            box-shadow:0 0 15px rgba(0,0,0,.5);
+        }
+
+        .pie1{
+
+            width:150px;
+            height:150px;
+
+            position:absolute;
+
+            top:450px;
+            left:20px;
+
+            background-color:red;
+
+            clip-path:polygon(
+                19% 42%,
+                88% 41%,
+                89% 70%,
+                18% 70%
+            );
+
+            box-shadow:0 0 15px rgba(0,0,0,.5);
+        }
+
+        .pie2{
+
+            width:150px;
+            height:150px;
+
+            position:absolute;
+
+            top:450px;
+            left:220px;
+
+            background-color:orangered;
+
+            clip-path:polygon(
+                19% 42%,
+                88% 41%,
+                89% 70%,
+                18% 70%
+            );
+
+            box-shadow:0 0 15px rgba(0,0,0,.5);
+        }
+
+        .cono_helado{
+
+            width:110px;
+            height:120px;
+
+            position:absolute;
+
+            top:255px;
+            left:270px;
+
+            background-color:peru;
+
+            clip-path:polygon(
+                50% 97%,
+                0 0,
+                100% 0
+            );
+
+            box-shadow:0 0 15px rgba(0,0,0,.5);
+        }
+
+        .bola_helado1,
+        .bola_helado2,
+        .bola_helado3{
+
+            width:60px;
+            height:60px;
+
+            background:pink;
+
+            position:absolute;
+
+            clip-path:circle(50% at 50% 50%);
+
+            box-shadow:0 0 15px rgba(0,0,0,.5);
+        }
+
+        .bola_helado1{
+            top:200px;
+            left:320px;
+        }
+
+        .bola_helado2{
+            top:200px;
+            left:270px;
+        }
+
+        .bola_helado3{
+            top:155px;
+            left:295px;
+        }
+
+        @keyframes parallax{
+
+            0%{
+                transform:translateY(0px);
+            }
+
+            50%{
+                transform:translateY(-10px);
+            }
+
+            100%{
+                transform:translateY(0px);
+            }
+        }
+
+        .volver{
+
+            background:#1e293b;
+
+            color:white;
+
+            text-decoration:none;
+
+            padding:12px 20px;
+
+            margin:15px;
+
+            border-radius:10px;
+
+            display:inline-block;
+        }
+
+        .volver:hover{
+
+            background:#2563eb;
+        }
+
     </style>
-  </head>
-  <body>
-    <a href="../index.html">Volver para el Inicio</a>
+</head>
+
+<body>
+
+    <a href="../index.html" class="volver">
+        Volver al Inicio
+    </a>
+
+    <h1 class="titulo">
+        PERSONAJE CREADO CON CLIP-PATH
+    </h1>
 
     <div class="contenedor">
-      <div class="sombrero"></div>
-      <div class="cara"></div>
-      <div class="cuerpo"></div>
-      <div class="brazos"></div>
-      <div class="pie1"></div>
-      <div class="pie2"></div>
-      <div class="cono_helado"></div>
-      <div class="bola_helado1"></div>
-      <div class="bola_helado2"></div>
-      <div class="bola_helado3"></div>
+
+        <div class="sombrero"></div>
+
+        <div class="cara">
+
+            <div class="ojo1"></div>
+
+            <div class="ojo2"></div>
+
+            <div class="boca"></div>
+
+        </div>
+
+        <div class="cuerpo"></div>
+
+        <div class="brazos"></div>
+
+        <div class="pie1"></div>
+
+        <div class="pie2"></div>
+
+        <div class="cono_helado"></div>
+
+        <div class="bola_helado1"></div>
+
+        <div class="bola_helado2"></div>
+
+        <div class="bola_helado3"></div>
+
     </div>
-  </body>
+
+</body>
+
 </html>
